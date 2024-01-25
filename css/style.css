@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #9eb8d9;
+  color: #ece3ce;
+  font-weight: bold;
+}
+
+aside {
+  float: right;
+  width: 30%; /* Atur lebar aside */
+  padding-left: 20px;
+  color: #053b50;
+  grid-column: 2 / span 1; /* Mengatur posisi kolom untuk elemen aside */
+}
+main {
+  gap: 20px; /* Jarak antara elemen */
+
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%; /* Sesuaikan lebar main */
+
+  grid-column: 1 / span 1; /* Mengatur posisi kolom untuk elemen main */
+}
+
+/* Membersihkan float */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container {
+  overflow: auto; /* Membersihkan float */
+  display: flex;
+}
+
+.clearfix h3 {
+  text-align: center;
+}
+
+.judul {
+  font-weight: bold;
+  font-family: cursive;
+  font-size: 4em;
+  text-align: center;
+  text-shadow: 4px 4px 3px #164863;
+  margin: 10px auto;
+  align-items: center;
+  padding: 10px;
+}
+
+.list {
+  display: flex;
+  padding: 20px;
+  margin: auto;
+  gap: 2rem;
+  justify-content: center;
+  list-style: none;
+}
+
+.list a {
+  color: #164863;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.list a:hover {
+  color: #f7efe5;
+}
+.image-container {
+  display: flex;
+  justify-content: center; /* Untuk mengatur gambar ke tengah secara horizontal */
+  align-items: center; /* Untuk mengatur gambar ke tengah secara vertikal */
+  height: 500px; /* Sesuaikan tinggi dengan kebutuhan */
+}
+
+.image-aside img {
+  max-width: 100%;
+  height: auto;
+}
+
+.profil-img {
+  width: 58%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #164863;
+}
+
+article {
+  flex: 1 1 70%; /* Menentukan lebar konten utama */
+  margin-right: 20px; /* Jarak antara konten utama dan aside */
+  float: left;
+}
+
+article h2 {
+  color: #9eb8d9;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+  clear: both;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: #053b50;
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+}
+
+footer .credit a {
+  color: #164863;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 1000px) {
+  #content,
+  aside {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  main {
+    flex-flow: column nowrap;
+  }
+  main aside {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Tata letak menjadi kolom saat layar kecil */
+  }
+
+  main,
+  aside {
+    width: 100%; /* Lebar penuh pada layar kecil */
+  }
+
+  aside {
+    order: 2; /* Ubah urutan aside saat layar kecil */
+  }
+}
